@@ -1,1 +1,11 @@
-<p>courses works!</p>
+<h2>Tillgängliga kurser</h2>
+
+<ul>
+    <li *ngFor="let course of courseList">
+    {{ course.courseCode }} 
+    {{ course.courseName }} 
+    {{ course.points }} 
+    {{ course.subject }} 
+    {{ course.syllabus }}
+    </li>
+</ul>
