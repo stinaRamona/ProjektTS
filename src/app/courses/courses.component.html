@@ -4,7 +4,7 @@
 <input type="text" id="filter">
 
 <label for="subject">Välj ämne:</label>
-<select id="subject">
+<select id="subject" [(ngModel)]="selectedSubject" (change)="onSubjectChange()">
     <option>Välj ämne</option>
     <option *ngFor="let subject of onlySubjects">{{subject}}</option>
 </select>
@@ -20,7 +20,7 @@
         </tr>
     </thead>
 
-    <tbody *ngFor="let course of courseList">
+    <tbody *ngFor="let course of subjectCourses">
         <tr>
             <td>{{ course.courseCode }} </td>
             <td>{{ course.courseName }}</td>
