@@ -1,11 +1,33 @@
 <h2>Tillgängliga kurser</h2>
 
-<ul>
-    <li *ngFor="let course of courseList">
-    {{ course.courseCode }} 
-    {{ course.courseName }} 
-    {{ course.points }} 
-    {{ course.subject }} 
-    {{ course.syllabus }}
-    </li>
-</ul>
+<label for="filter">Filtrera kurser:</label>
+<input type="text" id="filter">
+
+<label for="subject">Välj ämne:</label>
+<select id="subject">
+    <option>Välj ämne</option>
+    <option *ngFor="let subject of onlySubjects">{{subject}}</option>
+</select>
+
+<table>
+    <thead>
+        <tr>
+            <th>Kurskod</th>
+            <th>Namn</th>
+            <th>Poäng</th>
+            <th>Ämne</th>
+            <th>Kursplan</th>
+        </tr>
+    </thead>
+
+    <tbody *ngFor="let course of courseList">
+        <tr>
+            <td>{{ course.courseCode }} </td>
+            <td>{{ course.courseName }}</td>
+            <td>{{ course.points }} </td>
+            <td>{{ course.subject }}</td>
+            <td><a href="{{ course.syllabus }}">Kursplan</a></td>
+        </tr>
+    </tbody>
+</table>
+

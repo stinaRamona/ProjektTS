@@ -12,12 +12,20 @@ import { CommonModule } from '@angular/common';
 })
 export class CoursesComponent {
   courseList: Course[] = []; 
+  onlySubjects: String [] = []; 
 
   constructor(private courseService: CourseService) {}
 
   ngOnInit(){
     this.courseService.getCourses().subscribe(data => {
       this.courseList = data;
+      this.getSubjects(); 
     })
+  }
+
+  //För att inte kursämnet ska upprepa sig i select listan
+  getSubjects(){
+    const subjects = new Set(this.courseList.map(course => course.subject));
+    this.onlySubjects = Array.from(subjects);
   }
 }
