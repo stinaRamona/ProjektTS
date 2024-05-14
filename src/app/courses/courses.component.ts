@@ -58,18 +58,18 @@ export class CoursesComponent {
 
   //Sortering av kurser baserat på namn i ämne, kurskod, namn och poäng
   sortCourseCode(){
-    this.courseList.sort((a, b) => (a.courseCode > b.courseCode) ? 1 : -1);
+    this.filteredCourses.sort((a, b) => (a.courseCode > b.courseCode) ? 1 : -1);
   }  
 
   sortCourseName(){
-    this.courseList.sort((a, b) =>(a.courseName > b.courseName) ? 1 : -1);
+    this.filteredCourses.sort((a, b) =>(a.courseName > b.courseName) ? 1 : -1);
   }
 
   sortCoursePoints(){
-    this.courseList.sort((a, b) => (a.points > b.points) ? 1 : -1);
+    this.filteredCourses.sort((a, b) => (a.points > b.points) ? 1 : -1);
   } 
 
   sortCourseSubject(){
-    this.courseList.sort((a, b) => (a.subject > b.subject) ? 1 : -1);
+    this.filteredCourses.sort((a, b) => (a.subject > b.subject) ? 1 : -1);
   }
 }
