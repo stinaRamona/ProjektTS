@@ -14,18 +14,32 @@ import { FormsModule } from '@angular/forms';
 export class CoursesComponent {
   courseList: Course[] = []; 
   onlySubjects: String [] = []; 
+  //för att filtrera kurser på ämne
   selectedSubject: String = ''; 
   subjectCourses: Course[] = [];
+  //för att filtrera kurser på textfältet 
+  filteredCourses: Course[] = []; 
+  filterValue: String = ''; 
 
   constructor(private courseService: CourseService) {}
 
   ngOnInit(){
     this.courseService.getCourses().subscribe(data => {
       this.courseList = data;
+      this.filteredCourses = data; 
       this.getSubjects(); 
       this.filterBySubject()
     })
-  }
+  } 
+
+  //Applisera filter 
+  applyFilter(): void {
+    //filtrerar kurskod och kursnamn
+    this.filteredCourses = this.courseList.filter((course)=>
+      course.courseCode.toLowerCase().includes(this.filterValue.toLowerCase()) ||
+      course.courseName.toLowerCase().includes(this.filterValue.toLowerCase())   
+    )
+  } 
 
   //För att inte kursämnet ska upprepa sig i select listan
   getSubjects(){

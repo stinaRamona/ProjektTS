@@ -1,7 +1,7 @@
 <h2>Tillgängliga kurser</h2>
 
 <label for="filter">Filtrera kurser:</label>
-<input type="text" id="filter">
+<input type="text" id="filter" [(ngModel)]="filterValue" (input)="applyFilter()">
 
 <label for="subject">Välj ämne:</label>
 <select id="subject" [(ngModel)]="selectedSubject" (change)="onSubjectChange()">
@@ -9,7 +9,7 @@
     <option *ngFor="let subject of onlySubjects">{{subject}}</option>
 </select>
 
-<p>Antal kurser som visas: {{subjectCourses.length}}</p>
+<p>Antal kurser som visas: {{filteredCourses.length}}</p>
 
 <table>
     <thead>
@@ -22,7 +22,7 @@
         </tr>
     </thead>
 
-    <tbody *ngFor="let course of subjectCourses">
+    <tbody *ngFor="let course of filteredCourses">
         <tr>
             <td>{{ course.courseCode }} </td>
             <td>{{ course.courseName }}</td>
