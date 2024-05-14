@@ -28,37 +28,32 @@ export class CoursesComponent {
       this.courseList = data;
       this.filteredCourses = data; 
       this.getSubjects(); 
-      this.filterBySubject()
+      this.filterCourses()
     })
   } 
 
-  //Applisera filter 
-  applyFilter(): void {
-    //filtrerar kurskod och kursnamn
-    this.filteredCourses = this.courseList.filter((course)=>
-      course.courseCode.toLowerCase().includes(this.filterValue.toLowerCase()) ||
-      course.courseName.toLowerCase().includes(this.filterValue.toLowerCase())   
-    )
-  } 
 
   //För att inte kursämnet ska upprepa sig i select listan
   getSubjects(){
     const subjects = new Set(this.courseList.map(course => course.subject));
     this.onlySubjects = Array.from(subjects);
-  }
+  } 
 
-  //För att visa kurser utvalda av ämne 
-  filterBySubject() {
-    if (this.selectedSubject === '' || this.selectedSubject === 'Alla'){
-      this.subjectCourses = this.courseList
-    } else {
-      this.subjectCourses = this.courseList.filter(course => course.subject === this.selectedSubject);
-      
-    }
+  filterCourses(){
+    this.filteredCourses = this.courseList.filter(course => {
+      const matchesSubject = this.selectedSubject === '' || this.selectedSubject === 'Alla' || course.subject === this.selectedSubject;
+      const matchesFilter = course.courseCode.toLowerCase().includes(this.filterValue.toLowerCase()) ||
+      course.courseName.toLowerCase().includes(this.filterValue.toLowerCase());
+      return matchesSubject && matchesFilter;
+    });
   }
 
   onSubjectChange(){
-    this.filterBySubject(); 
+    this.filterCourses(); 
+  } 
+
+  onFilterChange(){
+    this.filterCourses(); 
   }
 
   //Sortering av kurser baserat på namn i ämne, kurskod, namn och poäng

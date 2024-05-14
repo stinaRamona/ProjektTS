@@ -1,11 +1,11 @@
 <h2>Tillgängliga kurser</h2>
 
 <label for="filter">Filtrera kurser:</label>
-<input type="text" id="filter" [(ngModel)]="filterValue" (input)="applyFilter()">
+<input type="text" id="filter" [(ngModel)]="filterValue" (input)="onFilterChange()">
 
 <label for="subject">Välj ämne:</label>
 <select id="subject" [(ngModel)]="selectedSubject" (change)="onSubjectChange()">
-    <option>Alla</option>
+    <option value="Alla">Alla</option>
     <option *ngFor="let subject of onlySubjects">{{subject}}</option>
 </select>
 
