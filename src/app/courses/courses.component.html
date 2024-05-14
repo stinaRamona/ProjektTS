@@ -5,17 +5,19 @@
 
 <label for="subject">Välj ämne:</label>
 <select id="subject" [(ngModel)]="selectedSubject" (change)="onSubjectChange()">
-    <option>Välj ämne</option>
+    <option>Alla</option>
     <option *ngFor="let subject of onlySubjects">{{subject}}</option>
 </select>
+
+<p>Antal kurser som visas: {{subjectCourses.length}}</p>
 
 <table>
     <thead>
         <tr>
-            <th>Kurskod</th>
-            <th>Namn</th>
-            <th>Poäng</th>
-            <th>Ämne</th>
+            <th (click)="sortCourseCode()">Kurskod</th>
+            <th (click)="sortCourseName()">Namn</th>
+            <th (click)="sortCoursePoints()">Poäng</th>
+            <th (click)="sortCourseSubject()">Ämne</th>
             <th>Kursplan</th>
         </tr>
     </thead>
@@ -27,6 +29,7 @@
             <td>{{ course.points }} </td>
             <td>{{ course.subject }}</td>
             <td><a href="{{ course.syllabus }}">Kursplan</a></td>
+            <button>Välj</button>
         </tr>
     </tbody>
 </table>

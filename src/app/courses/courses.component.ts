@@ -35,7 +35,7 @@ export class CoursesComponent {
 
   //För att visa kurser utvalda av ämne 
   filterBySubject() {
-    if (this.selectedSubject === ''){
+    if (this.selectedSubject === '' || this.selectedSubject === 'Alla'){
       this.subjectCourses = this.courseList
     } else {
       this.subjectCourses = this.courseList.filter(course => course.subject === this.selectedSubject);
@@ -45,5 +45,22 @@ export class CoursesComponent {
 
   onSubjectChange(){
     this.filterBySubject(); 
+  }
+
+  //Sortering av kurser baserat på namn i ämne, kurskod, namn och poäng
+  sortCourseCode(){
+    this.courseList.sort((a, b) => (a.courseCode > b.courseCode) ? 1 : -1);
+  }  
+
+  sortCourseName(){
+    this.courseList.sort((a, b) =>(a.courseName > b.courseName) ? 1 : -1);
+  }
+
+  sortCoursePoints(){
+    this.courseList.sort((a, b) => (a.points > b.points) ? 1 : -1);
+  } 
+
+  sortCourseSubject(){
+    this.courseList.sort((a, b) => (a.subject > b.subject) ? 1 : -1);
   }
 }
