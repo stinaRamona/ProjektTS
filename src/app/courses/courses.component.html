@@ -1,5 +1,10 @@
 <h2>Tillgängliga kurser</h2>
 
+<ul>
+    <li><a routerLink = "/courses" routerLinkActive="active">Kurslista</a></li>
+    <li><a routerLink="/ramschema" routerLinkActive="active">Valda kurser</a></li>
+</ul>
+
 <label for="filter">Filtrera kurser:</label>
 <input type="text" id="filter" [(ngModel)]="filterValue" (input)="onFilterChange()">
 
