@@ -11,24 +11,32 @@ import { Course } from '../model/course';
   styleUrl: './ramschema.component.css'
 })
 export class RamschemaComponent { 
-  //initierar tom array
+  //initierar tom array för kurslistan
   courseList: Course[] = []; 
+  //variabel för att spara summan av poängen i
+  sumOfPoints: number = 0; 
 
   constructor(private localstService: LocalstService) {}
 
   ngOnInit() {
-    this.loadCourses(); 
+    this.loadCourses();  
   } 
 
   loadCourses(){
     //hämtar kurslista från LS
-    this.courseList = this.localstService.getCourses()
+    this.courseList = this.localstService.getCourses(); 
+    this.calculatePoints(); 
   }
 
   removeCourse(course: Course): void{
     this.localstService.removeItem(course.courseCode);
     //hämtar kurslistan på nytt
     this.loadCourses(); 
+  }
+
+  calculatePoints() {
+    //lägger ihop summana v alla kurspoängen
+    this.sumOfPoints = this.courseList.reduce((sum, course) => sum + course.points, 0)
   }
 
 
