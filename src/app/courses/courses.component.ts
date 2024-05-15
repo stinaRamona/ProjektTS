@@ -4,6 +4,7 @@ import { CourseService } from '../services/course.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { LocalstService } from '../services/localst.service';
 
 @Component({
   selector: 'app-courses',
@@ -23,7 +24,7 @@ export class CoursesComponent {
   filterValue: String = '';
  
 
-  constructor(private courseService: CourseService) {}
+  constructor(private courseService: CourseService, private localstService: LocalstService) {} 
 
   ngOnInit(){
     this.courseService.getCourses().subscribe(data => {
@@ -75,16 +76,8 @@ export class CoursesComponent {
     this.filteredCourses.sort((a, b) => (a.subject > b.subject) ? 1 : -1);
   } 
 
-  //för att spara kursen vid knapptryck
-  saveCourse(course: any){
-    //Hämta om det finns i ls
-    let selectedCourses = JSON.parse(localStorage.getItem('selectedCourses') || '[]');
-    
-    //Lägg till ny kurs i array
-    selectedCourses.push(course);
-
-    localStorage.setItem('selectedCourses', JSON.stringify(course)); 
-
-    console.log(localStorage.getItem('selectedCourses')); 
+  //lägga till värde i local storage genom service
+  saveToLocalStorage(course: Course): void { 
+    this.localstService.addCourse(course) 
   }
 }
