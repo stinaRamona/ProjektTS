@@ -18,7 +18,7 @@
             <td>{{ course.points }} </td>
             <td>{{ course.subject }}</td>
             <td><a href="{{ course.syllabus }}">Kursplan</a></td>
-            <td><button>Ta bort</button></td>
+            <td><button (click)="removeCourse(course)">Ta bort</button></td>
         </tr>
     </tbody>
 </table>

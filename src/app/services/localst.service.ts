@@ -22,8 +22,10 @@ export class LocalstService {
   }
 
   //för för att ta bort en kurs 
-  removeItem(key:string): void {
-    localStorage.removeItem(key); 
+  removeItem(courseCode:string): void {
+    let savedCourses = this.getCourses();
+    savedCourses = savedCourses.filter(course => course.courseCode !== courseCode);
+    this.setItem(this.storageKey, JSON.stringify(savedCourses)); 
   }
 
   //för att radera hela kurslistan
