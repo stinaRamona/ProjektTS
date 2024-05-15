@@ -77,7 +77,14 @@ export class CoursesComponent {
 
   //för att spara kursen vid knapptryck
   saveCourse(course: any){
-    localStorage.setItem('selectedCourse', JSON.stringify(course)); 
-    console.log(localStorage.getItem('selectedCourse')); 
+    //Hämta om det finns i ls
+    let selectedCourses = JSON.parse(localStorage.getItem('selectedCourses') || '[]');
+    
+    //Lägg till ny kurs i array
+    selectedCourses.push(course);
+
+    localStorage.setItem('selectedCourses', JSON.stringify(course)); 
+
+    console.log(localStorage.getItem('selectedCourses')); 
   }
 }
