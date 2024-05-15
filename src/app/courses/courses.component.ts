@@ -20,7 +20,8 @@ export class CoursesComponent {
   subjectCourses: Course[] = [];
   //för att filtrera kurser på textfältet 
   filteredCourses: Course[] = []; 
-  filterValue: String = ''; 
+  filterValue: String = '';
+ 
 
   constructor(private courseService: CourseService) {}
 
@@ -57,7 +58,7 @@ export class CoursesComponent {
     this.filterCourses(); 
   }
 
-  //Sortering av kurser baserat på namn i ämne, kurskod, namn och poäng
+  //Sortering av kurser baserat på kod, namn, poäng och ämne
   sortCourseCode(){
     this.filteredCourses.sort((a, b) => (a.courseCode > b.courseCode) ? 1 : -1);
   }  
@@ -72,5 +73,11 @@ export class CoursesComponent {
 
   sortCourseSubject(){
     this.filteredCourses.sort((a, b) => (a.subject > b.subject) ? 1 : -1);
+  } 
+
+  //för att spara kursen vid knapptryck
+  saveCourse(course: any){
+    localStorage.setItem('selectedCourse', JSON.stringify(course)); 
+    console.log(localStorage.getItem('selectedCourse')); 
   }
 }

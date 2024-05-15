@@ -34,7 +34,7 @@
             <td>{{ course.points }} </td>
             <td>{{ course.subject }}</td>
             <td><a href="{{ course.syllabus }}">Kursplan</a></td>
-            <button>Välj</button>
+            <td><button (click)="saveCourse(course)">Välj</button></td>
         </tr>
     </tbody>
 </table>
