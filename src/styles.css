@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+/* style som gäller alla sidor */
+
+body{
+    background-color: rgb(255, 255, 244);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    width: 950px; 
+    margin: 0 auto; 
+}
+
+p {
+    font-size: 1.25em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+td button {
+    border-radius: 4px;
+    background-color: rgb(59, 80, 54);
+    color:beige; 
+    padding: 5px 24px;
+    margin-right: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;  
+    border: 1px solid #808080; 
+    box-shadow: 2px 2px #707070;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: rgb(44, 59, 40);
+    color: rgb(255, 208, 0); 
+    cursor: pointer;
+} 

@@ -1,0 +1,37 @@
+/*Tabell*/
+table {
+    border-collapse: collapse;
+    font-size: 1.25em;
+}
+
+tr {
+    border-bottom: 1px solid #808080;
+}
+
+td, th {
+    text-align: left;
+    padding: 15px; 
+} 
+
+
+/*Input fält*/
+label{
+    font-size: 1.25em; 
+    font-weight: bold;
+    padding: 1%; 
+}
+
+input{
+    width:26%;
+    padding:0.5em;  
+    border-radius: 4px;
+    border: 2px solid #808080
+} 
+
+select{
+    padding: 0.5em; 
+    border-radius: 4px;
+    border: 2px solid #808080; 
+    width: 43%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}

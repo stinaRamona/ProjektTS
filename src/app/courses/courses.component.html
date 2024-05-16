@@ -21,7 +21,7 @@
             <th>Kursplan</th>
         </tr>
     </thead>
-
+    <!--ngFor för attt läsa ut kurserna till dom. Index med classer som kollar modulus 2 för att kunna styla tabell-->
     <tbody *ngFor="let course of filteredCourses">
         <tr>
             <td>{{ course.courseCode }} </td>

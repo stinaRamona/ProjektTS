@@ -1,0 +1,18 @@
+/*Tabell*/
+table {
+    border-collapse: collapse;
+    font-size: 1.25em;
+}
+
+tr {
+    border-bottom: 1px solid #808080;
+}
+
+td, th {
+    text-align: left;
+    padding: 15px; 
+}
+
+#deleteBtn {
+    background-color: rgb(182, 0, 0);
+}
