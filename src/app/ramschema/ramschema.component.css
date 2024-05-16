@@ -5,7 +5,7 @@ table {
 }
 
 tr {
-    border-bottom: 1px solid #808080;
+    border-bottom: 1px inset #b4b4b48f;
 }
 
 td, th {
@@ -15,4 +15,9 @@ td, th {
 
 #deleteBtn {
     background-color: rgb(182, 0, 0);
+    white-space: nowrap;/*för att texten ska hålla sig till en rad*/
+}
+
+#deleteBtn:hover {
+    background-color: rgba(182, 0, 0, 0.61);
 }

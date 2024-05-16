@@ -5,7 +5,7 @@ table {
 }
 
 tr {
-    border-bottom: 1px solid #808080;
+    border-bottom: 1px inset #b4b4b48f;
 }
 
 td, th {

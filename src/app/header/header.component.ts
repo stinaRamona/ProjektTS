@@ -9,5 +9,5 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+  headerPic: string = "assets/images/universitet_header.jpg"; 
 }
