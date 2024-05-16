@@ -2,7 +2,8 @@
 
 body{
     background-color: rgb(255, 255, 255);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+    font-family:Georgia, 'Times New Roman', Times, serif; 
+    margin: 0px;  
 }
 
 main {
@@ -28,6 +29,7 @@ td button {
     margin-bottom: 1%;  
     border: 1px solid #808080; 
     font-size: 1em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 button:hover {
