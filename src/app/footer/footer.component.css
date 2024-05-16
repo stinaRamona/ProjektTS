@@ -1,0 +1,15 @@
+footer { 
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1%;  
+    background-color: rgb(59, 80, 54);
+    color:beige; 
+}
+
+footer p {
+    text-align: center;
+    font-size: 1.25em;
+    max-width: 36em; 
+    margin: 0 auto;
+    padding: 0.5%;  
+}

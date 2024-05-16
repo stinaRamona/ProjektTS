@@ -6,7 +6,8 @@ img {
 /*navigering*/
 h1 {
     color:beige; 
-    margin-left:20px;  
+    margin-left:20px; 
+    font-size: 2em; 
 }
 
 nav {
@@ -41,4 +42,13 @@ a {
     padding: 2%; 
     font-weight: bold;
     font-size: 1.5em;
+}
+
+/*hover och active för nav*/
+a:hover {
+    color:rgb(238, 238, 140)
+}
+
+.active {
+    color:rgb(238, 238, 140) 
 }
