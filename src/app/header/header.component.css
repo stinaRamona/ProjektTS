@@ -1,12 +1,12 @@
 /*headerbild*/
 img {
     width: 100%; 
-    opacity: 0.7;
 } 
 
 /*navigering*/
 h1 {
     color:beige; 
+    margin-left:20px;  
 }
 
 nav {
@@ -15,6 +15,10 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: fixed;
+    z-index: 99;
+    width:99%;
+    opacity: 0.90; 
 }
 
 #navList {
