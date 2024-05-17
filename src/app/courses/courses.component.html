@@ -1,14 +1,14 @@
 <h2>Tillgängliga kurser</h2>
+<div id="form-wrapper">
+    <label for="filter">Filtrera kurser:</label>
+    <input type="text" id="filter" [(ngModel)]="filterValue" (input)="onFilterChange()">
 
-<label for="filter">Filtrera kurser:</label>
-<input type="text" id="filter" [(ngModel)]="filterValue" (input)="onFilterChange()">
-
-<label for="subject">Välj ämne:</label>
-<select id="subject" [(ngModel)]="selectedSubject" (change)="onSubjectChange()">
-    <option value="Alla">Alla</option>
-    <option *ngFor="let subject of onlySubjects">{{subject}}</option>
-</select>
-
+    <label for="subject">Välj ämne:</label>
+    <select id="subject" [(ngModel)]="selectedSubject" (change)="onSubjectChange()">
+        <option value="Alla">Alla</option>
+        <option *ngFor="let subject of onlySubjects">{{subject}}</option>
+    </select>
+</div>
 <p>Antal kurser som visas: {{filteredCourses.length}}</p>
 
 <div id="table-wrapper">
@@ -26,12 +26,12 @@
         <!--ngFor för attt läsa ut kurserna till dom. Index med classer som kollar modulus 2 för att kunna styla tabell-->
         <tbody *ngFor="let course of filteredCourses">
             <tr>
-                <td>{{ course.courseCode }} </td>
-                <td>{{ course.courseName }}</td>
-                <td>{{ course.points }} </td>
-                <td>{{ course.subject }}</td>
-                <td><a href="{{ course.syllabus }}">Kursplan</a></td>
-                <td><button (click)="saveToLocalStorage(course)">Välj</button></td>
+                <td data-label="Kurskod">{{ course.courseCode }} </td>
+                <td data-label="Namn">{{ course.courseName }}</td>
+                <td data-label="Poäng">{{ course.points }} </td>
+                <td data-label="Ämne">{{ course.subject }}</td>
+                <td data-label="Kursplan"><a href="{{ course.syllabus }}">Kursplan</a></td>
+                <td data-label=""><button (click)="saveToLocalStorage(course)">Välj</button></td>
             </tr>
         </tbody>
     </table>
