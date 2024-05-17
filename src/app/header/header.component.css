@@ -52,3 +52,22 @@ a:hover {
 .active {
     color:rgb(238, 238, 140) 
 }
+
+/*responsivitet*/
+@media (max-width:1081px){
+    nav h1 {
+        display: none;
+    } 
+
+    nav {
+        justify-content: center; 
+    }
+
+}
+
+@media (max-width: 550px) {
+    nav {
+        flex-direction: column;
+    }
+
+}

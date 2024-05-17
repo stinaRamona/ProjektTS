@@ -11,26 +11,29 @@
 
 <p>Antal kurser som visas: {{filteredCourses.length}}</p>
 
-<table>
-    <thead>
-        <tr>
-            <th (click)="sortCourseCode()">Kurskod</th>
-            <th (click)="sortCourseName()">Namn</th>
-            <th (click)="sortCoursePoints()">Poäng</th>
-            <th (click)="sortCourseSubject()">Ämne</th>
-            <th>Kursplan</th>
-        </tr>
-    </thead>
-    <!--ngFor för attt läsa ut kurserna till dom. Index med classer som kollar modulus 2 för att kunna styla tabell-->
-    <tbody *ngFor="let course of filteredCourses">
-        <tr>
-            <td>{{ course.courseCode }} </td>
-            <td>{{ course.courseName }}</td>
-            <td>{{ course.points }} </td>
-            <td>{{ course.subject }}</td>
-            <td><a href="{{ course.syllabus }}">Kursplan</a></td>
-            <td><button (click)="saveToLocalStorage(course)">Välj</button></td>
-        </tr>
-    </tbody>
-</table>
+<div id="table-wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th (click)="sortCourseCode()">Kurskod</th>
+                <th (click)="sortCourseName()">Namn</th>
+                <th (click)="sortCoursePoints()">Poäng</th>
+                <th (click)="sortCourseSubject()">Ämne</th>
+                <th>Kursplan</th>
+                <th>Lägg till</th>
+            </tr>
+        </thead>
+        <!--ngFor för attt läsa ut kurserna till dom. Index med classer som kollar modulus 2 för att kunna styla tabell-->
+        <tbody *ngFor="let course of filteredCourses">
+            <tr>
+                <td>{{ course.courseCode }} </td>
+                <td>{{ course.courseName }}</td>
+                <td>{{ course.points }} </td>
+                <td>{{ course.subject }}</td>
+                <td><a href="{{ course.syllabus }}">Kursplan</a></td>
+                <td><button (click)="saveToLocalStorage(course)">Välj</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
