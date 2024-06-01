@@ -1,6 +1,7 @@
 # ProjektTS
+I detta projekt kommer en one page application skapas för ett universitet. Appen ska kunna läsa in data från ett api med HTTP client. Det ska gå att spara kurser i sin egna lista genom local storage. Den listan kan man hitta på en separat sida, som läser in kurserna från local storage. Där kan man även se hur många poäng som kurserna man har valt genererar. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+Projektet skapades med [Angular CLI](https://github.com/angular/angular-cli) verision 17.3.4.
 
 ## Development server
 
